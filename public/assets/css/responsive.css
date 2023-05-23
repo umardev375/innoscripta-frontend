@@ -1,0 +1,19 @@
+@media (max-width: 1760px) {
+    html {
+        font-size: 80%;
+    }
+}
+@media (max-width: 1024px) {
+    html {
+        font-size: 75%;
+    }
+}
+@media (max-width: 575px) {
+    h1{
+        font-size: 3rem !important;
+        line-height: 4rem !important;
+    }
+    h2{
+        font-size: 1.5rem !important;
+    }
+}

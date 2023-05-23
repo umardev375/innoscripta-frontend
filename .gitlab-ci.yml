@@ -1,0 +1,33 @@
+stages:
+  - deploy
+deploy_ofmt_admin:
+  stage: deploy
+  tags:
+    - bd-demo-1
+  script:
+    - npm i
+    - npm run build:stag
+    - pm2 restart oom-admin
+  only:
+    - staging
+deploy_ofmt_admin_node2:
+  stage: deploy
+  tags:
+    - dev-nodejs-2-drop
+  script:
+    - npm i
+    - npm run build
+    - pm2 restart ofmt-admin
+  only:
+    - ui
+
+deploy_ofmt_admin_dev:
+  stage: deploy
+  tags:
+    - bd-demo-2
+  script:
+    - npm i 
+    - npm run build:dev
+    - pm2 restart oom-admin-dev
+  only:
+    - development
